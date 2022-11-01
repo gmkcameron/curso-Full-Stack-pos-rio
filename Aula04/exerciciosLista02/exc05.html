@@ -1,0 +1,13 @@
+<script>
+    let idade = prompt("Diga sua idade: ");
+    let sexo = prompt("Você é homem ou mulher? ");
+    let condicao = prompt("Se possuir condição especial, diga (deficiente físico, gestante, etc): ");
+
+    if (idade > 60) {
+        alert("Vá para a fila preferencial! ");
+    } else if ((condicao == "deficiente físico") || (condicao == "gestante")) {
+        alert("Vá para a fila preferencial! ");
+    } else {
+        alert("Vá para a fila geral! ");
+    }
+</script>

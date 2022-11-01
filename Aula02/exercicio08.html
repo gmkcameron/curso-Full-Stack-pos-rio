@@ -1,0 +1,17 @@
+<script>
+    let anoNasc = parseInt(prompt("Diga em que ano vc nasceu: "));
+   // let anoAtual = parseInt(prompt("Diga o ano atual: ")); 
+    let anoAtual = new Date().getFullYear();
+    let idade = anoAtual - anoNasc; 
+    
+    /* if (idade >= 16)
+        console.log("Você PODE votar este ano, pois está com " + idade + " anos.");
+    else
+        console.log("Você NÃO PODE votar este ano, pois está com " + idade + " anos."); */
+
+// outra maneira
+    if (idade >= 16)
+        alert("Você PODE votar este ano, pois está com " + idade + " anos.");
+    else
+        alert("Você NÃO PODE votar este ano, pois está com " + idade + " anos.");
+</script>

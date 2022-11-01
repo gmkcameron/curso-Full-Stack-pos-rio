@@ -1,0 +1,69 @@
+<script>
+    var a = 10;
+    var b = 12;
+    var c = 15;
+
+    if (a == "10") { //valor igual
+        document.write("(==) O valor " + a + " é igual a 10!<br>");
+    } else {
+        document.write("(==) O valor " + a + " não é igual a 10!<br>");
+    }
+
+    if (a === "10") { //valor idêntico
+        document.write("(===) O valor " + a + " é idêntico a 10!<br>");
+    } else {
+        document.write("(===) O valor " + a + " não é idêntico a 10!<br>");
+    }
+
+    if (a != "10") { //valor diferente
+       document.write("(!=) O valor " + a + " é diferente de 10!<br>"); 
+    } else {
+        document.write("(!=) O valor " + a + " não é diferente de 10!<br>");
+    }
+
+    if (a !== "10") {
+        document.write("(!==) O valor " + a + " não é idêntico a 10!<br>");
+    } else {
+        document.write("() O valor " + a + " é idêntico a 10!<br>");
+    }
+
+    if (c > b) {
+        document.write("(>) O valor " + c + " é maior que " + b + "!<br>");
+    } else {
+        document.write("() O valor " + c + " é menor que " + b + "!<br>");
+    }
+
+    if (a < b) {
+        document.write("(<) O valor " + a + " é menor que " + b + "!<br>");
+    } else {
+        document.write("(<) O valor " + a + " é maior que " + b + "!<br>");
+    }
+
+    if (a >= b) {
+        document.write("(>=) O valor " + a + " é maior ou igual a " + b + "!<br>");    
+    } else {
+        document.write("(>=) O valor " + a + " não é maior ou igual a " + b + "!<br>");
+    }
+
+    if (a <= b) {
+        document.write("(<=) O valor " + a + " é menor ou igual a " + b + "!<br>");
+    } else {
+        document.write("(<=) O valor " + a + " é não é menor ou igual a " + b + "!<br>");
+    }
+
+    if ((a == 10) && (b == 12)) {
+        document.write("(&&) O valor de a é igual a 10 E o valor de b é igual a 12!<br>");
+    /*} else if ((a != 10) && (b == 12)) {
+        document.write("(&&) O valor " + a + " não é igual a 10 e o valor " + b + " é igual a 12!<br>");    
+    } else if ((a == 10) && (b != 12)) {
+        document.write("(&&) O valor " + a + " é igual a 10 e o valor " + b + " não é igual a 12!<br>");*/
+    } else {
+        document.write("(&&) As duas condições não são verdadeiras, O valor de a não é igual a 10 ou o valor de b não é igual a 12!<br>");
+    }
+
+    if ((a == 11) || (b == 12)) {
+        document.write("(||) O valor " + a + " é igual a 11 OU o valor " + b + " é igual a 12!<br>"); //basta uma delas verdadeira
+    } else {
+        document.write("(||) As duas condições não são verdadeiras porque " + a + " não é igual a 11 e " + b + " não é igual a 15!<br>");
+    }
+</script>

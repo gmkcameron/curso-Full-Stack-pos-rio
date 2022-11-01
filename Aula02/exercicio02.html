@@ -1,0 +1,9 @@
+<script>
+    let salAtual = parseFloat(prompt("Digite o seu salário: "));
+    let percReaj = parseFloat(prompt("Digite o percentual de reajuste: "));
+
+    let reaj = percReaj / 100 * salAtual;
+    let novoSal = salAtual + reaj
+
+    console.log("Seu novo salário é R$ " + novoSal);
+</script>
