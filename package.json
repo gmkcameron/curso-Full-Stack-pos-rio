@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Repositório criado para acompanhar a evolução no \"Curso Full Stack Pos-Rio\", polo da Universidade Cândido Mendes em Teresópolis, com duração de 12 meses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmkcameron/curso-Full-Stack-pos-rio.git"
+  },
+  "author": "Guilherme Cameron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gmkcameron/curso-Full-Stack-pos-rio/issues"
+  },
+  "homepage": "https://github.com/gmkcameron/curso-Full-Stack-pos-rio#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
