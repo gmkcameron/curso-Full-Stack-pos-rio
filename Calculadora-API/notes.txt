@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Estudo feito depois da Aula 15.
+=======
+Estudo realizado após a Aula 15 do Curso.
+>>>>>>> d6adeaae87a1020fd9876b4fe3b352087a0287a4
