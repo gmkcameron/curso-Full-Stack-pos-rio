@@ -1,7 +1,0 @@
-require('dotenv').config();
-
-const path = require('path');
-
-module.exports = {
-    config: path.resolve(__dirname, 'src', 'configs', 'database.js')
-}
