@@ -1,57 +1,62 @@
 const ProdutoModel = require("../models/ProdutoModel");
+const CategoriaModel = require("../models/CategoriaModel");
+const { where } = require('sequelize');
 
-let produtos = [];
-let idAtual = 1;
-
-function obterPorTodos() {
-    return produtos;
-}
-
-function obterPorId(id) {
-    return produtos.find(produto => produto.id == id);
-}
-
-function cadastrar(obj) {
-    let produto = new ProdutoModel(obj);
-    produto.id = idAtual;
-
-    produtos.push(produto);
-
-    idAtual++;
-
-    return(produto);
-}
-
-function atualizar(id, obj) {
-    const index = produtos.findIndex(produto => produto.id == id);
-
-    if (index <0) {
-        return "Produto não encontrado, tente novamente por favor!"
+async function obterTodos() {
+  return await ProdutoModel.findAll({
+    include:{
+      model: CategoriaModel,
+      attributes: ["descricao"]
     }
-
-    const produto = { id: parseInt(id), ...obj };
-
-    produtos.splice(index, 1, produto);
-
-    return produto
+  });
 }
 
-function deletar(id) {
-    const index = produtos.findIndex(produto => produto.id == id);
-    
-    if(index < 0) {
-        return "produto não encontrado, tente novamente por favor!"
-    }
+async function obterPorId(id) {
+  const produto = await ProdutoModel.findByPk(id);
 
-    produtos.splice(index, 1);
+  if (!produto) {
+    throw new 'Não foi possível encontrar o produto com id ' + id;
+  }
 
-    return id
+  return produto;
+}
+
+async function cadastrar(obj) {
+  const produto = await ProdutoModel.create(obj);
+
+  if (!produto) {
+    throw new 'Não foi possível cadastrar o produto';
+  }
+
+  return produto;
+}
+
+async function atualizar(id, obj) {
+  const produto = await obterPorId(id);
+
+  const atualizado = await ProdutoModel.update(obj, { where: { id } });
+
+  if (!atualizado) {
+    throw new 'Não foi possível atualizar o produto';
+  }
+
+  return obj;
+}
+
+async function deletar(id) {
+  const produto = await ProdutoModel.destroy({ where: { id } });
+
+  if (!produto) {
+    throw new 'Não foi possível deletar o produto';
+  }
+
+  return id;
 }
 
 module.exports = {
-    obterPorTodos,
-    obterPorId,
-    cadastrar,
-    atualizar,
-    deletar
+  obterTodos,
+  obterPorId,
+  cadastrar,
+  atualizar,
+  deletar
 }

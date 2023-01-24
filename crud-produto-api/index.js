@@ -4,6 +4,9 @@ const app = express();
 
 app.use(express.json());
 
+require('dotenv').config();
+require('./src/database');
+
 const routes = require("./routes");
 app.use(routes);
 
